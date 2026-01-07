@@ -32,7 +32,7 @@ df = load_data()
 st.title("Washington D.C. Bike Sharing – Interactive Dashboard")
 st.caption("Dashboard summarizing Assignments I & II on the Kaggle bike-sharing-demand data.")
 
-# --------- SIDEBAR FILTERS (≥3 widgets) ---------
+
 with st.sidebar:
     st.header("Filters")
 
@@ -65,7 +65,7 @@ with st.sidebar:
         ]
     )
 
-# --------- APPLY FILTERS ---------
+
 filtered = df[df["year"].isin(year_filter)]
 filtered = filtered[filtered["season_name"].isin(season_filter)]
 
@@ -78,7 +78,7 @@ st.markdown(f"**Filtered rows:** {len(filtered):,} (out of {len(df):,})")
 
 sns.set_theme(style="whitegrid")
 
-# --------- PLOTS (reuse your notebook code here) ---------
+
 
 if plot_choice == "Histogram of rentals":
     st.subheader("Distribution of hourly rentals (count)")
@@ -168,3 +168,4 @@ elif plot_choice == "Correlation heatmap":
         ax=ax
     )
     st.pyplot(fig)
+
